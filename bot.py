@@ -17,7 +17,7 @@ def insert_func(val):
 @bot.message_handler(commands=['start'])
 def start_func(message):
     bot.send_message(message.chat.id, 'Здравствуйте! Добро пожаловать в казино!')
-    sql = ("SELECT * FROM profiles WHERE telegram_id = %s ")
+    sql = ("SELECT * FROM users WHERE telegram_id = %s ")
     data = [message.chat.id]
     cur.execute(sql, data)
     result = cur.fetchall()
