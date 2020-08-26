@@ -31,7 +31,7 @@ f = open("password.txt", "r")
 password = f.read()
 
 bot = telebot.TeleBot('1108938461:AAHbRO5dGtudQdbPV0qP11ZKDvKINw6PNi8')  #поддержка
-
+    
 online = []
 
 quest1 = []
@@ -119,6 +119,4 @@ def messanger(message):
             insertfunc(qwe)
 if __name__ == '__main__':
     bot.infinity_polling()
-
-    
 
