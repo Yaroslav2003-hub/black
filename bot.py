@@ -5,18 +5,18 @@ from telebot import types
 
 bot = telebot.TeleBot('1326123436:AAERCbZ2FNkCg_G0jqb59bAmsg_Rh2Tnd4c')
 
-connect = mysql.connector.connect(host='127.0.0.1', user='root', password='', port='3306', database='telegram')
+conn = mysql.connector.connect(host='127.0.0.1', user='root', password='', port='3306', database='telegram')
 cur = connect.cursor()
 
-<<<<<<< HEAD
-def connection(val):
+def insert_func(val):
     sql = "INSERT INTO users VALUES(%s, %s, %s, %s, %s)"
     cur.execute(sql, val)
-<<<<<<< Updated upstream
     conn.commit()
-    conn.commit()
-=======
->>>>>>> 6eb0cf00825b1d7fc590465ea8beee30b3452c61
-=======
-    conn.commit()
->>>>>>> Stashed changes
+
+@bot.message_handler(commands=['start'])
+def start_func(message):
+    bot.send_message(message.chat.id, 'Здравствуйте! Добро пожаловать в казино!')
+
+
+if name == 'main':
+    bot.infinity_polling()
