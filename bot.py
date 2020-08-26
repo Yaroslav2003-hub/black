@@ -53,7 +53,7 @@ def login_to_TS(message):
 def password_func(message):
     if message.text == password:
             bot.send_message(message.chat.id, "Авторизація успішна")
-            online.append(message.chat.id)           
+            online.append(message.chat.id)
     else:
         bot.send_message(message.chat.id, "Не правильний пароль")
 
