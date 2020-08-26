@@ -5,7 +5,7 @@ from telebot import types
 
 bot = telebot.TeleBot('1326123436:AAERCbZ2FNkCg_G0jqb59bAmsg_Rh2Tnd4c')
 
-connect = mysql.connector.connect(host='127.0.0.1', user='root', password='', port='3306', database='telegram')
+conn = mysql.connector.connect(host='127.0.0.1', user='root', password='', port='3306', database='telegram')
 cur = connect.cursor()
 
 def insert_func(val):
@@ -14,7 +14,7 @@ def insert_func(val):
     conn.commit()
 
 @bot.message_handler(commands=['start'])
-def start_func():
+def start_func(message):
     bot.send_message(message.chat.id, 'Здравствуйте! Добро пожаловать в казино!')
 
 
