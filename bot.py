@@ -12,3 +12,4 @@ def connection(val):
     sql = "INSERT INTO users VALUES(%s, %s, %s, %s, %s)"
     cur.execute(sql, val)
     conn.commit()
+    conn.commit()
