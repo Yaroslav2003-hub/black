@@ -42,6 +42,7 @@ helpers = []
 @bot.message_handler(commands=["start"])
 def start(message):
     bot.send_message(message.chat.id, "Щоб отримати консультацію тех. підтримки натисність /helper , та дочекайтесь підключення спеціаліста.")
+
 @bot.message_handler(commands=["login"])
 def login_to_TS(message):
     if (proverka(online, message.chat.id) == 0):
@@ -118,4 +119,6 @@ def messanger(message):
             insertfunc(qwe)
 if __name__ == '__main__':
     bot.infinity_polling()
+
+    
 
