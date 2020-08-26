@@ -12,7 +12,11 @@ cur = connect.cursor()
 def connection(val):
     sql = "INSERT INTO users VALUES(%s, %s, %s, %s, %s)"
     cur.execute(sql, val)
+<<<<<<< Updated upstream
     conn.commit()
     conn.commit()
 =======
 >>>>>>> 6eb0cf00825b1d7fc590465ea8beee30b3452c61
+=======
+    conn.commit()
+>>>>>>> Stashed changes
