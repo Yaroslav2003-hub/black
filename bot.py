@@ -29,7 +29,10 @@ def start_func(message):
     else:
         data1 = [message.chat.id, 0, 0, 0, 0]
         insert_func(data1)
-        bot.send_message(message.chat.id, 'Здравствуйте! Добро пожаловать в казино!')
+        keyboard1 = telebot.types.ReplyKeyboardMarkup()
+        keyboard1.row('Играть')
+        keyboard1.row('Кабинет')
+        bot.send_message(message.chat.id, 'Здравствуйте! Добро пожаловать в казино!', reply_markup=keyboard1)
         bot.register_next_step_handler(message, select_move)
 
 def select_move(message):
