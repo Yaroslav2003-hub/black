@@ -27,5 +27,7 @@ def start_func(message):
         data1 = [message.chat.id, 0, 0, 0, 0]
         insert_func(data1)
 
+
+
 if __name__ == '__main__':
     bot.infinity_polling()
