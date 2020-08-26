@@ -14,3 +14,9 @@ def insert_func(val):
     conn.commit()
 
 @bot.message_handler(commands=['start'])
+def start_func():
+    bot.send_message(message.chat.id, 'Здравствуйте! Добро пожаловать в казино!')
+
+
+if __name__ == '__main__':
+    bot.infinity_polling()
