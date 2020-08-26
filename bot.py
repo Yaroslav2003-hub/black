@@ -13,10 +13,19 @@ def insert_func(val):
     cur.execute(sql, val)
     conn.commit()
 
+
 @bot.message_handler(commands=['start'])
 def start_func(message):
     bot.send_message(message.chat.id, 'Здравствуйте! Добро пожаловать в казино!')
-
+    sql = ("SELECT * FROM profiles WHERE telegram_id = %s ")
+    data = [message.chat.id]
+    cur.execute(sql, data)
+    result = cur.fetchall()
+    if len(result) > 0:
+        pass
+    else:
+        data1 = [message.chat.id, 0, 0, 0, 0]
+        insert_func(data1)
 
 if __name__ == '__main__':
     bot.infinity_polling()
